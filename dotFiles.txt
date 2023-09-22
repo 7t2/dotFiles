@@ -1,0 +1,13 @@
+.bashrc
+.config/picom.conf
+.config/ranger/commands.py
+.config/ranger/commands_full.py
+.config/ranger/rc.conf
+.config/ranger/rifle.conf
+.config/ranger/scope.sh
+.config/polybar/config.ini
+.config/polybar/launch.sh
+.config/MangoHud/MangoHud.conf
+.config/i3/config
+.config/fontconfig/fonts.conf
+.config/dunst/dunstrc
