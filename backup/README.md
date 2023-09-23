@@ -1,1 +1,1 @@
-The single most recent copy of your dotfiles before the last batch of changes will be stored here.
+When overwriting files with dotFiles.sh, the overwritten files will me moved here first.

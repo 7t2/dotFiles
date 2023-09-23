@@ -11,6 +11,8 @@
 
 DotFiles is a Bash script designed to help you manage your dotfiles efficiently. Dotfiles are configuration files that usually start with a dot (e.g. `.bashrc`) and are typically used to personalize your command-line environment and various applications.
 
+DotFiles was created to eliminate the clutter from your home directory. Rather than having a .git/ and .gitignore in your home folder, you can download this repo elsewhere and keep all of your custom dotfiles together.
+
 This script allows you to synchronize your dotfiles between your home directory and a project directory, or vice versa. You can easily switch between configurations and setup new user environments!
 
 ## Features
