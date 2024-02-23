@@ -19,8 +19,8 @@ if [ ! -e "$project_home" ];then
    exit 1
 fi
 if [ ! -e "$backup_folder" ]; then
-    echo "DotFiles backup folder $backup_folder does not exist. Exiting."
-    exit 1
+    echo "DotFiles backup folder $backup_folder does not exist. Creating it now."
+    mkdir -p "$backup_folder"
 fi
 if [ ! -e "$user_home" ]; then
     echo "User home folder $user_home does not exist. Exiting."
