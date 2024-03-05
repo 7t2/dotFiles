@@ -64,8 +64,8 @@ copy() {
 # Ask the user for the direction of copy
 echo
 echo "Choose the direction of copy:"
-echo "1. From your dotFiles home directory ($project_home) to your home directory ($user_home)"
-echo "2. From your home directory ($user_home) to your dotFiles home directory ($project_home)"
+echo "1. From this git repo ($project_home) to your home directory ($user_home)"
+echo "2. From your home directory ($user_home) to your git repo ($project_home)"
 read -p "Enter your choice (1/2): " copy_direction
 echo
 if [[ "$copy_direction" == "1" ]]; then

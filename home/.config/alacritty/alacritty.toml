@@ -1,0 +1,10 @@
+[font]
+size = 8.0
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[window]
+opacity = 0.8

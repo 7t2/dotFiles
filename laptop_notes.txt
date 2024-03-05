@@ -1,0 +1,5 @@
+TODO when converting to laptop
+
+picom vsync off
+remove swap win alt
+
