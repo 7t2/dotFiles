@@ -2,18 +2,22 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+for_window [class="qalculate-qt"] floating enable
+
 # Sets mod button to windows key
 set $mod Mod4
+set $alt Mod1
 
 # Wallpaper, press mod q to change it
 exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers
 bindsym $mod+q exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers
 
 # swap mod and alt
-exec --no-startup-id setxkbmap -option '' -option altwin:swap_alt_win
+#exec_always --no-startup-id setxkbmap -option '' -option altwin:swap_alt_win
 
 # Suspend shortcut
 bindsym $mod+BackSpace exec --no-startup-id systemctl suspend
+bindsym $alt+l exec --no-startup-id loginctl lock-session
 
 # Picom compositor
 exec_always --no-startup-id picom -b --config ~/.config/picom.conf
@@ -32,7 +36,11 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #exec --no-startup-id convert $(find /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers -name "*" | shuf -n1) -resize 1440x900^ -gravity center -extent 1440x900 /home/hunter/.config/i3/bg.png
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --ignore-empty-password --color=ff0000
+
+# Dim the screen after 5 minutes, and lock screen 2 minutes later
+exec --no-startup-id xset s 300 120
+# xss-lock runs dim screen scripts when dimming screen, and runs i3lock when locking
+exec --no-startup-id xss-lock -n ~/.config/i3/scripts/dim-screen.sh --transfer-sleep-lock -- i3lock --nofork --ignore-empty-password --color=ff0000
 
 # NetworkManager applet
 exec --no-startup-id nm-applet
@@ -45,6 +53,9 @@ exec --no-startup-id blueman-applet
 
 # Redshift
 exec --no-startup-id redshift-gtk
+
+# Polkit
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -99,7 +110,11 @@ bindcode $mod+40 exec "rofi -modi drun,run -show drun -show-icons"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Rofi emoji picker
-bindsym $mod+p exec --no-startup-id rofi -modi emoji -show emoji 
+bindsym $mod+p exec --no-startup-id rofi -modi emoji -show emoji
+
+# Calculator
+bindsym XF86Calculator exec --no-startup-id qalculate-qt
+bindsym $alt+d [class="qalculate-qt"] kill
 
 # change focus
 bindsym $mod+h focus left

@@ -1,0 +1,1 @@
+in /etc/X11/xorg.conf.d/ there is 00-keybaord.conf for swapping alt-win and 20-amdgpu.conf for gpu settings
