@@ -6,7 +6,7 @@
 ## CONFIGURATION ##############################################################
 
 # Brightness will be lowered to this value.
-min_brightness=25
+min_brightness=10
 
 ###############################################################################
 

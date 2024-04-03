@@ -2,8 +2,6 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-for_window [class="qalculate-qt"] floating enable
-
 # Sets mod button to windows key
 set $mod Mod4
 set $alt Mod1
@@ -12,12 +10,12 @@ set $alt Mod1
 exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers
 bindsym $mod+q exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers
 
-# swap mod and alt
-#exec_always --no-startup-id setxkbmap -option '' -option altwin:swap_alt_win
-
 # Suspend shortcut
 bindsym $mod+BackSpace exec --no-startup-id systemctl suspend
 bindsym $alt+l exec --no-startup-id loginctl lock-session
+
+# Enable numlock
+exec --no-startup-id numlockx
 
 # Picom compositor
 exec_always --no-startup-id picom -b --config ~/.config/picom.conf
@@ -37,10 +35,13 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #exec --no-startup-id convert $(find /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers -name "*" | shuf -n1) -resize 1440x900^ -gravity center -extent 1440x900 /home/hunter/.config/i3/bg.png
 
-# Dim the screen after 5 minutes, and lock screen 2 minutes later
-exec --no-startup-id xset s 300 120
+# Dim the screen after 5 minutes, lock the screen 1 minute later, then turn the screen off 30 seconds later
+exec --no-startup-id xset s 300 60
+exec --no-startup-id xset dpms 390 390 390
 # xss-lock runs dim screen scripts when dimming screen, and runs i3lock when locking
 exec --no-startup-id xss-lock -n ~/.config/i3/scripts/dim-screen.sh --transfer-sleep-lock -- i3lock --nofork --ignore-empty-password --color=ff0000
+# Caffeine for controlling whether computer goes to sleep or not (caffeine-ng)
+exec --no-startup-id caffeine
 
 # NetworkManager applet
 exec --no-startup-id nm-applet
@@ -113,6 +114,7 @@ bindcode $mod+40 exec "rofi -modi drun,run -show drun -show-icons"
 bindsym $mod+p exec --no-startup-id rofi -modi emoji -show emoji
 
 # Calculator
+for_window [class="qalculate-qt"] floating enable
 bindsym XF86Calculator exec --no-startup-id qalculate-qt
 bindsym $alt+d [class="qalculate-qt"] kill
 
