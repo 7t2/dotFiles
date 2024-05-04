@@ -41,7 +41,7 @@ exec --no-startup-id xset dpms 390 390 390
 # xss-lock runs dim screen scripts when dimming screen, and runs i3lock when locking
 exec --no-startup-id xss-lock -n ~/.config/i3/scripts/dim-screen.sh --transfer-sleep-lock -- i3lock --nofork --ignore-empty-password --color=ff0000
 # Caffeine for controlling whether computer goes to sleep or not (caffeine-ng)
-exec --no-startup-id caffeine
+#exec --no-startup-id caffeine
 
 # NetworkManager applet
 exec --no-startup-id nm-applet

@@ -4,6 +4,7 @@
 .gtkrc-2.0
 .vimrc
 .xprofile
+backup.sh
 
 # ~/.config
 
