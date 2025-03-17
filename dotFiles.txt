@@ -17,8 +17,15 @@ backup.sh
 
 # ~/.config/hypr
 
-.config/hypr/hyprland.conf
 .config/hypr/scripts/sleep.sh
+.config/hypr/frappe.conf
+.config/hypr/hypridle.conf
+.config/hypr/hyprland.conf
+.config/hypr/hyprlock.conf
+.config/hypr/hyprpaper.conf
+.config/hypr/latte.conf
+.config/hypr/macciato.conf
+.config/hypr/mocha.conf
 
 # ~/.config/i3
 
